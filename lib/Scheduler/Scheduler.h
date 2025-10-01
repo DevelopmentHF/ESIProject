@@ -5,7 +5,7 @@
 #include "config.h"
 
 // Default id to return if no room in jobs array to add to
-constexpr unsigned char NO_FREE_ROOM = -1;
+constexpr char NO_FREE_ROOM = -1;
 
 class Scheduler {
     using Callback = void (*)();
@@ -41,5 +41,5 @@ class Scheduler {
 
         Job _jobs[MAX_JOBS];
 
-        bool isIDValid(int id);
+        static bool isIDValid(int id);
 };

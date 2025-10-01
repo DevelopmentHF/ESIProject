@@ -50,13 +50,13 @@ void Scheduler::run() {
 
     // go thru each job, run it :)
     for (int i = 0; i < MAX_JOBS; i++) {
-        Job currentJob = _jobs[i];
+        Job &currentJob = _jobs[i];
 
         // skip empty or paused jobs
         if (!currentJob.enabled || currentJob.cb == nullptr) {continue;}
 
         // check timing
-        if ((now - currentJob.last) > currentJob.interval) {
+        if ((now - currentJob.last) >= currentJob.interval) {
             currentJob.last = now;
             currentJob.cb();
         }
