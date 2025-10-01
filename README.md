@@ -43,6 +43,7 @@ cd pillbox-stepper
 
 ## 📁 Project Structure
 
+```
 pillbox-stepper/
 ├─ platformio.ini        # Project config (board, libs)
 ├─ src/
@@ -53,6 +54,7 @@ pillbox-stepper/
 │  ├─ Scheduler/         # Non-blocking task scheduler
 │  └─ StepperDriver/     # Stepper motor control wrapper
 └─ test/                 # (Optional) unit tests
+```
 
 - `src/main.cpp` → sketch entry point.  
 - `include/` → global headers (pins, constants).  
