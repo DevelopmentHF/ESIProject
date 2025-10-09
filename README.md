@@ -92,18 +92,18 @@ If someone prefers the Arduino IDE:
 
 To confirm PlatformIO is installed and working before wiring the stepper, try this minimal sketch:
 ```cpp
-    #include <Arduino.h>
+#include <Arduino.h>
 
-    void setup() {
-      pinMode(LED_BUILTIN, OUTPUT);
-    }
+void setup() {
+    pinMode(LED_BUILTIN, OUTPUT);
+}
 
-    void loop() {
-      digitalWrite(LED_BUILTIN, HIGH);
-      delay(500);
-      digitalWrite(LED_BUILTIN, LOW);
-      delay(500);
-    }
+void loop() {
+    digitalWrite(LED_BUILTIN, HIGH);
+    delay(500);
+    digitalWrite(LED_BUILTIN, LOW);
+    delay(500);
+}
 ```
 1. Replace `src/main.cpp` with this code.  
 2. Build & upload in VS Code.  

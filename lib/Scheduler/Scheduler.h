@@ -2,10 +2,11 @@
 
 #include <Arduino.h>
 #include <Stepper.h>
-#include "config.h"
 
 // Default id to return if no room in jobs array to add to
 constexpr char NO_FREE_ROOM = -1;
+// how many jobs can the scheduler store
+constexpr unsigned char MAX_JOBS = 8;
 
 class Scheduler {
     using Callback = void (*)();

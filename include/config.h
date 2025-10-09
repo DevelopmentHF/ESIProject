@@ -8,6 +8,3 @@ constexpr unsigned char PIN_STEPPER_IN1 = 8;
 constexpr unsigned char PIN_STEPPER_IN2 = 9;
 constexpr unsigned char PIN_STEPPER_IN3 = 10;
 constexpr unsigned char PIN_STEPPER_IN4 = 11;
-
-// how many jobs can the scheduler store
-constexpr unsigned char MAX_JOBS = 8;
