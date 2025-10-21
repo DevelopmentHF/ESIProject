@@ -4,6 +4,8 @@ Scheduler::Scheduler() {
 
 }
 
+// TODO: Store times in permenant memory...
+// and which day its on etc.
 int Scheduler::every(uint32_t interval, Callback cb) {
     // search for a free space in jobs list and fill it in
     for (int i = 0; i<MAX_JOBS; i++) {
