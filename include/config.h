@@ -15,4 +15,4 @@ const bool RELAY_ACTIVE_LOW = false;
 constexpr unsigned char PIN_BTN = 2;
 constexpr unsigned char PIN_BUZZER = 4;
 
-constexpr unsigned int DISPENSE_DURATION_SECONDS = 10;
+constexpr unsigned int DISPENSE_DURATION_MS = 10000;

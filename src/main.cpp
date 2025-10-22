@@ -33,8 +33,8 @@ inline void relayOff() { digitalWrite(RELAY_PIN, RELAY_ACTIVE_LOW ? HIGH : LOW )
 void setup() {
   myStepper.setSpeed(10);
 
-  int id = scheduler.every(DISPENSE_DURATION_SECONDS, stepMotor);
-  int buzzer = scheduler.every(DISPENSE_DURATION_SECONDS, playBuzzer);
+  int id = scheduler.every(DISPENSE_DURATION_MS, stepMotor);
+  int buzzer = scheduler.every(DISPENSE_DURATION_MS, playBuzzer);
 
   pinMode(RELAY_PIN, OUTPUT);
   pinMode(PIN_BTN, INPUT_PULLUP); // pullup when not pressed.
