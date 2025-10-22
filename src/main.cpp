@@ -26,10 +26,6 @@ void turnOffBuzzer() {
   digitalWrite(PIN_BUZZER, LOW);
 }
 
-void newDay() {
-  pillsTaken = false;
-}
-
 // Helpers to map ON/OFF to the module's polarity
 inline void relayOn()  { digitalWrite(RELAY_PIN, RELAY_ACTIVE_LOW ? LOW  : HIGH); }
 inline void relayOff() { digitalWrite(RELAY_PIN, RELAY_ACTIVE_LOW ? HIGH : LOW ); }
