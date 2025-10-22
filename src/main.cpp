@@ -12,8 +12,6 @@ Stepper myStepper = Stepper(STEPS_PER_REV_DEFAULT,
 
 Scheduler scheduler;
 
-bool pillsTaken;
-
 void stepMotor() {
   // test step 45 deg
   myStepper.step(STEPS_PER_REV_DEFAULT / 8);
