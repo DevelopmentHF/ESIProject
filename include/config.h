@@ -10,7 +10,7 @@ constexpr unsigned char PIN_STEPPER_IN3 = 10;
 constexpr unsigned char PIN_STEPPER_IN4 = 11;
 
 constexpr unsigned char RELAY_PIN = 13;
-const bool RELAY_ACTIVE_LOW = true; // true for modules where LOW = ON
+const bool RELAY_ACTIVE_LOW = false; 
 
 
 constexpr unsigned char PIN_BUZZER = 4;

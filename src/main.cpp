@@ -38,13 +38,12 @@ void setup() {
   pinMode(PIN_BUZZER, OUTPUT);
 
   // Make sure we're OFF at boot
-  // TODO: WRONG GENERATED CODE. RELAYOFF IS RELAYON
   relayOff();
   delay(20); 
+  relayOn();
 }
 
 
-// TODO: Put arduino to sleep instead?
 void loop() {
   scheduler.run();
 }
