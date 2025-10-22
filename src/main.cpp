@@ -12,16 +12,24 @@ Stepper myStepper = Stepper(STEPS_PER_REV_DEFAULT,
 
 Scheduler scheduler;
 
+bool pillsTaken;
+
 void stepMotor() {
   // test step 45 deg
   myStepper.step(STEPS_PER_REV_DEFAULT / 8);
 }
 
 void playBuzzer() {
-  delay(2500);
-  digitalWrite(PIN_BUZZER, HIGH); // Turn the buzzer on
-  delay(1000);                  // Keep it on for 1 second
+  // alert user
+  digitalWrite(PIN_BUZZER, HIGH);
+}
+
+void turnOffBuzzer() {
   digitalWrite(PIN_BUZZER, LOW);
+}
+
+void newDay() {
+  pillsTaken = false;
 }
 
 // Helpers to map ON/OFF to the module's polarity
@@ -31,10 +39,11 @@ inline void relayOff() { digitalWrite(RELAY_PIN, RELAY_ACTIVE_LOW ? HIGH : LOW )
 void setup() {
   myStepper.setSpeed(10);
 
-  int id = scheduler.every(5000, stepMotor);
-  int buzzer = scheduler.every(5000, playBuzzer);
+  int id = scheduler.every(DISPENSE_DURATION_SECONDS, stepMotor);
+  int buzzer = scheduler.every(DISPENSE_DURATION_SECONDS, playBuzzer);
 
   pinMode(RELAY_PIN, OUTPUT);
+  pinMode(PIN_BTN, INPUT_PULLUP); // pullup when not pressed.
   pinMode(PIN_BUZZER, OUTPUT);
 
   // Make sure we're OFF at boot
@@ -46,4 +55,8 @@ void setup() {
 
 void loop() {
   scheduler.run();
+
+  if (digitalRead(PIN_BTN) == LOW) {
+    turnOffBuzzer();
+  }
 }
